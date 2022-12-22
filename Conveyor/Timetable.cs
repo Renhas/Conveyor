@@ -43,7 +43,7 @@ namespace Forms
             Permutation<Job> permutation = result.Permutation;
             int dif = permutation.Values.Count - Colors.Count;
             if (dif < 0)
-                Colors.RemoveRange(permutation.Values.Count() - 1, dif);
+                Colors.RemoveRange(permutation.Values.Count() - 1, -1*dif);
             for (int i = Colors.Count(); i < permutation.Values.Count(); i++)
             {
                 Colors.Add(Color.Red);
@@ -66,8 +66,8 @@ namespace Forms
             ColumnsInit(matrix.GetUpperBound(1) + 1);
             RowsInit(matrix.GetUpperBound(0) + 1);
 
-            for (int i = 0; i <= matrix.GetUpperBound(0); i++)
-                for (int j = 0; j <= matrix.GetUpperBound(1); j++)
+            for (int i = 0; i < MainGrid.Rows.Count; i++)
+                for (int j = 0; j < MainGrid.Columns.Count; j++)
                     CellInit(matrix, i, j);
         }
 
@@ -76,19 +76,26 @@ namespace Forms
             MainGrid.Columns.Clear();
             for (int i = 0; i < count; i++) 
             {
-                MainGrid.Columns.Add(new DataGridViewColumn()
+                try
                 {
-                    Name = (i+1).ToString(),
-                    CellTemplate = new DataGridViewTextBoxCell(),
-                    DefaultCellStyle = new DataGridViewCellStyle() 
+                    MainGrid.Columns.Add(new DataGridViewColumn()
                     {
-                        BackColor = Color.White,
-                        SelectionBackColor = Color.White,
-                    },
-                    HeaderText = (i+1).ToString(),
-                    AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
+                        Name = (i + 1).ToString(),
+                        CellTemplate = new DataGridViewTextBoxCell(),
+                        DefaultCellStyle = new DataGridViewCellStyle()
+                        {
+                            BackColor = Color.White,
+                            SelectionBackColor = Color.White,
+                        },
+                        HeaderText = (i + 1).ToString(),
+                        AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
+                    }
+                    );
                 }
-                );            
+                catch 
+                {
+                    break;
+                }
             }
         }
 

@@ -42,8 +42,10 @@
             this.h_stepsTimetable = new Forms.Timetable();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.PathSelectButton = new System.Windows.Forms.Button();
+            this.EvolutionButton = new System.Windows.Forms.Button();
             this.InfoButton = new System.Windows.Forms.Button();
             this.StepsNumeric = new System.Windows.Forms.NumericUpDown();
+            this.RunButton = new System.Windows.Forms.Button();
             this.Tables.SuspendLayout();
             this.Brutforce.SuspendLayout();
             this.UpperHeuristic.SuspendLayout();
@@ -168,6 +170,8 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.PathSelectButton);
+            this.flowLayoutPanel1.Controls.Add(this.RunButton);
+            this.flowLayoutPanel1.Controls.Add(this.EvolutionButton);
             this.flowLayoutPanel1.Controls.Add(this.InfoButton);
             this.flowLayoutPanel1.Controls.Add(this.StepsNumeric);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -186,9 +190,20 @@
             this.PathSelectButton.UseVisualStyleBackColor = true;
             this.PathSelectButton.Click += new System.EventHandler(this.PathSelectButton_Click);
             // 
+            // EvolutionButton
+            // 
+            this.EvolutionButton.Location = new System.Drawing.Point(186, 3);
+            this.EvolutionButton.Name = "EvolutionButton";
+            this.EvolutionButton.Size = new System.Drawing.Size(75, 23);
+            this.EvolutionButton.TabIndex = 4;
+            this.EvolutionButton.Text = "Эволюция!";
+            this.EvolutionButton.UseVisualStyleBackColor = true;
+            this.EvolutionButton.Visible = false;
+            this.EvolutionButton.Click += new System.EventHandler(this.EvolutionButton_Click);
+            // 
             // InfoButton
             // 
-            this.InfoButton.Location = new System.Drawing.Point(105, 3);
+            this.InfoButton.Location = new System.Drawing.Point(267, 3);
             this.InfoButton.Name = "InfoButton";
             this.InfoButton.Size = new System.Drawing.Size(75, 24);
             this.InfoButton.TabIndex = 3;
@@ -199,7 +214,7 @@
             // 
             // StepsNumeric
             // 
-            this.StepsNumeric.Location = new System.Drawing.Point(186, 5);
+            this.StepsNumeric.Location = new System.Drawing.Point(348, 5);
             this.StepsNumeric.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.StepsNumeric.Minimum = new decimal(new int[] {
             1,
@@ -216,6 +231,17 @@
             0});
             this.StepsNumeric.Visible = false;
             this.StepsNumeric.ValueChanged += new System.EventHandler(this.StepsNumeric_ValueChanged);
+            // 
+            // RunButton
+            // 
+            this.RunButton.Location = new System.Drawing.Point(105, 3);
+            this.RunButton.Name = "RunButton";
+            this.RunButton.Size = new System.Drawing.Size(75, 23);
+            this.RunButton.TabIndex = 5;
+            this.RunButton.Text = "Запуск";
+            this.RunButton.UseVisualStyleBackColor = true;
+            this.RunButton.Visible = false;
+            this.RunButton.Click += new System.EventHandler(this.RunButton_Click);
             // 
             // MainForm
             // 
@@ -256,6 +282,8 @@
         private System.Windows.Forms.Button PathSelectButton;
         private System.Windows.Forms.NumericUpDown StepsNumeric;
         private System.Windows.Forms.Button InfoButton;
+        private System.Windows.Forms.Button EvolutionButton;
+        private System.Windows.Forms.Button RunButton;
     }
 }
 

@@ -58,6 +58,12 @@
     <Compile Include="ColorSelectElement.Designer.cs">
       <DependentUpon>ColorSelectElement.cs</DependentUpon>
     </Compile>
+    <Compile Include="EvolutionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvolutionForm.Designer.cs">
+      <DependentUpon>EvolutionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ColorSelectElement.resx">
       <DependentUpon>ColorSelectElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvolutionForm.resx">
+      <DependentUpon>EvolutionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InfoForm.resx">
       <DependentUpon>InfoForm.cs</DependentUpon>
@@ -120,6 +129,10 @@
     <ProjectReference Include="..\ConveyorSystem\ConveyorSystem.csproj">
       <Project>{4c600df5-5dd2-4369-9a60-f27ef3f65430}</Project>
       <Name>ConveyorSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Genetic\Genetic.csproj">
+      <Project>{df6d3644-bffd-4d9f-8134-d172ccd13803}</Project>
+      <Name>Genetic</Name>
     </ProjectReference>
     <ProjectReference Include="..\Permutations\Permutations.csproj">
       <Project>{350530ae-fa81-4d14-b199-cc391f7f86b0}</Project>
